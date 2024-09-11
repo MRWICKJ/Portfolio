@@ -9,7 +9,7 @@ function App() {
   return (
     <>
     <div className='flex items-center justify-center bg-[#111] h-screen text-slate-50 text-9xl'>
-      <p className='bg-gradient-to-tr from-indigo-500 to-red-500 bg-clip-text bg-transparent font-extrabold'>
+      <p className='bg-gradient-to-tr from-indigo-500 to-red-500 bg-clip-text text-transparent font-extrabold'>
      Hello World
       </p>
     </div>
