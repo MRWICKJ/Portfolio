@@ -10,8 +10,8 @@ function App() {
   return (
     <>
     <Organs/>
-    <div className='flex items-center justify-center bg-[#111] h-screen text-slate-50 text-9xl'>
-      <p className='font-extrabold text-white'>
+    <div className='flex items-center justify-center bg-[#111] h-screen text-slate-500'>
+      <p className='font-extrabold text-white text-9xl'>
          Hello World
       </p>
       </div>

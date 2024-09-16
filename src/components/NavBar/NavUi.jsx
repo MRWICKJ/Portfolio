@@ -57,7 +57,7 @@ export const Menu = ({ setActive, active, children }) => {
   return (
     <nav
     onMouseLeave={() => setActive(null)}
-    className="fixed top-5 left-1/2 transform -translate-x-1/2 w-1/2 z-50 border-b border-y-white/[0.1] bg-custom-white-transparent backdrop-blur-lg openNavigation flex justify-center gap-8 px-3 py-3 rounded-full"
+    className="fixed top-5 left-1/2 transform -translate-x-1/2 w-1/2 z-50 border border-white/[0.5] bg-custom-white-transparent backdrop-blur-lg openNavigation flex justify-center gap-8 px-3 py-3 rounded-full"
   >
     {children}
   </nav>
