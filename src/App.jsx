@@ -1,22 +1,27 @@
 import { useState } from 'react'
 import './App.css'
 import Organs from './organs/app'
-import Laptop from './3d Components/Laptop/App'
-import {TimelineDemo} from './Components/Timeline/app'
-
+import Laptop from './3d_Components/Laptop/App'
+import {TimelineDemo} from './components/Timeline/app'
+import { NavbarDemo } from './components/NavBar/FixedNav'
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-    <Organs/>
-    <div className='flex items-center justify-center bg-[#111] h-screen text-slate-500'>
-      <p className='font-extrabold text-white text-9xl'>
-         Hello World
-      </p>
+    <NavbarDemo/>
+     <div className='flex items-center justify-center bg-[#111] h-screen text-slate-500' id='home'>
+        <p className='font-extrabold text-white text-9xl'>
+          Hello World
+        </p>
       </div>
-      <Laptop />
-      <TimelineDemo/>
+      <div id='projects'>
+        <Laptop/>
+      </div>
+      <div id=''>
+        <TimelineDemo/>
+      </div>
+   
     </>
   )
 }

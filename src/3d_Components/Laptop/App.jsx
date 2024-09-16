@@ -105,14 +105,16 @@ export default function Laptop() {
 
   return (
     <div style={{ display: 'flex', height: '100vh' }}>
-      <div className=' bg-[#111] h-screen text-slate-50 text-7xl'>
-        <h1>Project section</h1>
-        <p>Additional description or content goes here.</p>
+      <div className='bg-[#111] text-slate-300 w-1/2 flex p-10 justify-center flex-col gap-8'>
+        <h1 className='text-left text-7xl mb-2 font-semibold'>Project section</h1>
+        <p className='text-3xl text-[#777]'>Click the Laptop and See the Magic 🪄</p>
+        <p className='text-lg text-[#555] pr-28 '>Unlock the Magic of <span className='text-indigo-500'>3D Design 🪄</span> 
+        Click the laptop to explore our immersive 3D components. See how dynamic and detailed our designs come to life with just a click. Discover the creativity and precision behind our work in an interactive showcase.</p>
       </div>
-      <div style={{ flex: 0.6 }}>
+      <div style={{ flex: 1 }}>
         <web.main
           style={{
-            background: props.open.to([0, 1], ['#f0f0f0', '#d25578']),
+            background: props.open.to([0, 1], ['#222', '#6366f1 ']),
             height: '100vh'
           }}
         >
