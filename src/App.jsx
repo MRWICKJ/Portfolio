@@ -1,7 +1,9 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
 import Organs from './organs/app'
+import Laptop from './3d Components/Laptop/App'
+import {TimelineDemo} from './Components/Timeline/app'
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -12,7 +14,9 @@ function App() {
       <p className='font-extrabold text-white text-9xl'>
          Hello World
       </p>
-    </div>
+      </div>
+      <Laptop />
+      <TimelineDemo/>
     </>
   )
 }
