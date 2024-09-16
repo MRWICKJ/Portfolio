@@ -10,6 +10,9 @@ import { IoSettings } from "react-icons/io5";
 import { TfiAnnouncement } from "react-icons/tfi";
 import { IoCloseSharp } from "react-icons/io5";
 import { IoMenu } from "react-icons/io5";
+import { GrAchievement } from "react-icons/gr";
+import { PiContactlessPaymentFill } from "react-icons/pi";
+import { GiJourney } from "react-icons/gi";
 // import logo from '../../assets/logo.png'
 // import { IoIosArrowDown } from "react-icons/io";
 
@@ -55,7 +58,7 @@ function Navbar({ className }) {
           </button>
           <div className="flex flex-col space-y-4">
             <a
-              to="/home"
+              href="/home"
               className={cn("text-md transition-colors duration-300", getActiveClass("/home"))}
               onClick={() => setIsDrawerOpen(false)}
             >
@@ -63,7 +66,7 @@ function Navbar({ className }) {
               Home
             </a>
             <a
-              to="/projects"
+              href="/projects"
               className={cn("text-md transition-colors duration-300", getActiveClass("/projects"))}
               onClick={() => setIsDrawerOpen(false)}
             >
@@ -71,7 +74,7 @@ function Navbar({ className }) {
               Projects
             </a>
             <a
-              to="/announcements"
+              href="/announcements"
               className={cn("text-md transition-colors duration-300", getActiveClass("/announcements"))}
               onClick={() => setIsDrawerOpen(false)}
             >
@@ -81,7 +84,7 @@ function Navbar({ className }) {
             <div className="flex flex-col space-y-4 text-2xl">
               <a
                 className="text-white hover:text-blue-500"
-                to="/login"
+                href="/login"
                 onClick={() => setIsDrawerOpen(false)}
               >
                 <FaUser className="inline-block mr-2 mb-2" />
@@ -89,7 +92,7 @@ function Navbar({ className }) {
               </a>
               <a
                 className="text-white hover:text-blue-500"
-                to="/dashboard"
+                href="/dashboard"
                 onClick={() => setIsDrawerOpen(false)}
               >
                 <MdDashboard className="inline-block mr-2 mb-2" />
@@ -97,7 +100,7 @@ function Navbar({ className }) {
               </a>
               <a
                 className="text-white hover:text-blue-500"
-                to="/settings"
+                href="/settings"
                 onClick={() => setIsDrawerOpen(false)}
               >
                 <IoSettings className="inline-block mr-2 mb-2" />
@@ -105,7 +108,7 @@ function Navbar({ className }) {
               </a>
             </div>
             <a
-              to="/apply"
+              href="/apply"
               className={cn(
                 "text-md px-2 py-0.5 rounded-md transition-colors duration-300",
                 location.pathname === "/apply" ? "bg-blue-600 text-white" : "bg-blue-500 text-white hover:bg-blue-600"
@@ -126,59 +129,67 @@ function Navbar({ className }) {
              {/* <img src={logo} alt={logo} className="h-6 w-6"/> */}
           </div>
           <a
-            to="/home"
-            className={cn("text-sm pt-1 transition-colors duration-300", getActiveClass("/home"))}
+            href="#home"
+            className={cn("text-sm pt-1 duration-300", getActiveClass("#home"))}
           >
-            <IoHome className="inline-block mr-2 mb-2" />
+            <IoHome className="inline-block mr-2 mb-1" />
             Home
           </a>
           <a
-            to="/projects"
-            className={cn("text-sm pt-1 transition-colors duration-300", getActiveClass("/projects"))}
+            href="#projects"
+            className={cn("text-sm pt-1 transition-colors duration-300", getActiveClass("#projects"))}
           >
-            <TbReportAnalytics className="inline-block mr-2 mb-2" />
+            <TbReportAnalytics className="inline-block mr-2 mb-1" />
             Projects
           </a>
           <a
-            to="/announcements"
-            className={cn("text-sm pt-1 transition-colors duration-300", getActiveClass("/announcements"))}
+            href="#announcements"
+            className={cn("text-sm pt-1 transition-colors duration-300", getActiveClass("#announcements"))}
           >
-            <TfiAnnouncement className="inline-block mr-2 mb-2" />
-            Announcements
+            <GrAchievement className="inline-block mr-2 mb-1"/>
+            Achievements
           </a>
-          <MenuItem setActive={setActive} active={active} item="Others">
-            <div className="flex flex-col space-y-4 text-sm">
-              <a
-                className="text-white hover:text-blue-500"
-                to="/login"
-              >
-                <FaUser className="inline-block mr-2 mb-2" />
-                Login
-              </a>
-              <a
-                className="text-white hover:text-blue-500"
-                to="/dashboard"
-              >
-                <MdDashboard className="inline-block mr-2 mb-2" />
-                Dashboard
-              </a>
-              <a
-                className="text-white hover:text-blue-500"
-                to="/settings"
-              >
-                <IoSettings className="inline-block mr-2 mb-2" />
-                Settings
-              </a>
-            </div>
-          </MenuItem>
           <a
-            to="/apply"
+            href="#journey"
+            className={cn("text-sm pt-1 transition-colors duration-300", getActiveClass("#announcements"))}
+          >
+            <GiJourney className="inline-block mr-2 mb-1"/>
+            Journey
+          </a>
+          {/* <MenuItem setActive={setActive} active={active} item="Others">
+            <div className="flex flex-col space-y-4 text-sm">
+            <a
+            className="text-white hover:text-blue-500"
+            href="/login"
+            >
+            <FaUser className="inline-block mr-2 mb-2" />
+            Login
+            </a>
+            <a
+            className="text-white hover:text-blue-500"
+            href="/dashboard"
+            >
+            <MdDashboard className="inline-block mr-2 mb-2" />
+            Dashboard
+            </a>
+            <a
+            className="text-white hover:text-blue-500"
+            href="/settings"
+            >
+            <IoSettings className="inline-block mr-2 mb-2" />
+            Settings
+            </a>
+            </div>
+            </MenuItem> */}
+          <a
+            href="#contact"
             className={cn(
               "text-md px-2 py-0.5 rounded-full transition-colors duration-300 text-sm",
-              location.pathname === "/apply" ? "bg-blue-600 text-white" : "bg-transparent text-white hover:bg-stone-800 hover:text-white border-y-white/[0.3] border px-3 py-1"
+              location.pathname === "/apply" ? "bg-neutral-400 text-zinc-800 px-3 py-1" : "bg-[#999] text-[#111] hover:bg-stone-600 hover:text-white px-3 py-1"
             )}
           >
-            Register
+            <PiContactlessPaymentFill className="inline-block mr-2 mb-1"/>
+            Let's Connect
           </a>
         </Menu>
       </div>
