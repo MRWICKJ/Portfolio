@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'custom-white-transparent': 'hsla(0, 0%, 7%, 0.68)', // White with 10% opacity
+      },
+    },
   },
   plugins: [],
 }
