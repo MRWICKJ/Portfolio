@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import './App.css'
-import Organs from './organs/app'
 import Laptop from './3d_Components/Laptop/App'
 import {TimelineDemo} from './components/Timeline/app'
 import { NavbarDemo } from './components/NavBar/FixedNav'
