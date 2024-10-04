@@ -105,7 +105,7 @@ export default function Laptop() {
 
   return (
     <div style={{ display: 'flex', height: '100vh' }}>
-      <div className='bg-[#111] text-slate-300 w-1/2 flex p-10 justify-center flex-col gap-8'>
+      <div className='bg-[#0a0a0a] text-slate-300 w-1/2 flex p-10 justify-center flex-col gap-8'>
         <h1 className='text-left text-7xl mb-2 font-semibold'>Project section</h1>
         <p className='text-3xl text-[#777]'>Click the Laptop and See the Magic 🪄</p>
         <p className='text-lg text-[#555] pr-28 '>Unlock the Magic of <span className='text-indigo-500'>3D Design 🪄</span> 
