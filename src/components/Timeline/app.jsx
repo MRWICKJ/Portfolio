@@ -1,6 +1,7 @@
 // import img from "next/img";
 import React from "react";
 import { Timeline } from "./timeline";
+import { TextHoverEffect } from "../GlowText/ui";
 
 export function TimelineDemo() {
   const data = [
@@ -8,6 +9,7 @@ export function TimelineDemo() {
       title: "2024",
       content: (
         <div>
+          
           <p
             className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
             Built and launched Aceternity UI and Aceternity UI Pro from scratch
@@ -145,7 +147,8 @@ export function TimelineDemo() {
     },
   ];
   return (
-    (<div className="w-full">
+    (<div className="w-full bg-[#0a0a0a]">
+      <TextHoverEffect text="JOURNEY" id="3" duration={1}/>
       <Timeline data={data} />
     </div>)
   );

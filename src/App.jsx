@@ -7,7 +7,7 @@ import { NavbarDemo } from './components/NavBar/FixedNav'
 import Landing from './components/Landing/App.jsx'
 import Footer from './components/Footer/App'
 import { Link } from 'react-scroll' // Import from react-scroll
-import { BentoGridDemo } from './components/Skills/App'
+import { BentoGridDemo } from './components/Projects/App.jsx'
 import Team from './components/Team/App'
 import LeetCodeProgress from './components/Leetcode/App.jsx'
 import Github from './components/Github/App.jsx'
@@ -29,7 +29,7 @@ function App() {
         <BentoGridDemo />
       </div>
 
-      <div id='projects'>
+      <div id='team'>
         <Team />
       </div>
     
@@ -41,7 +41,7 @@ function App() {
         <Github />
       </div>
 
-      <div id='jounry'>
+      <div id='journey'>
         <TimelineDemo />
       </div>
 
