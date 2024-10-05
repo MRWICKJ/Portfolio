@@ -123,7 +123,7 @@ function Navbar({ className }) {
       </div>
 
       {/* Full Navbar for larger screens */}
-      <div className="hidden lg:flex items-center space-x-6 bg-[#0a0a0a] p-4">
+      <div className="hidden lg:flex items-center space-x-6 bg-[#0a0a0a] p-2 ">
         <Menu>
           <Link
             to="home"
