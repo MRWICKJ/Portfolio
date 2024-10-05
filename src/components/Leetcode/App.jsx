@@ -1,4 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
+import {
+  FaMedal,
+  FaChartLine,
+  FaTrophy,
+  FaCheckCircle,
+  FaListAlt,
+  FaPercent,
+} from "react-icons/fa";
 
 const LeetCodeProgress = () => {
   const [progress, setProgress] = useState(null);
@@ -6,67 +14,112 @@ const LeetCodeProgress = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('https://leetcode-stats-api.herokuapp.com/haldershubhendu2')
+    fetch("https://leetcode-stats-api.herokuapp.com/haldershubhendu2")
       .then((response) => response.json())
       .then((data) => {
         setProgress(data);
         setLoading(false);
       })
       .catch((error) => {
-        setError('Failed to fetch data');
+        setError("Failed to fetch data");
         setLoading(false);
       });
   }, []);
 
-  if (loading) return <div className="text-center text-blue-500">Loading...</div>;
+  if (loading)
+    return <div className="text-center text-blue-500">Loading...</div>;
   if (error) return <div className="text-center text-red-500">{error}</div>;
 
   return (
-    <div className="dark:bg-[#0a0a0a] min-h-screen flex flex-col items-center justify-center">
-      <div className="container mx-auto my-10 p-5 bg-white dark:bg-[#0a0a0a] rounded-lg shadow-md">
-        {/* Profile Photo */}
-        <div className="flex items-center mb-6">
-        <img
-          src="https://avatars.githubusercontent.com/u/141364632?v=4"
-          alt="Profile"
-          className="w-20 h-20 rounded-full mr-4 border-4 border-gray-300 dark:border-gray-700"
-        />
-        <h1 className="text-4xl font-bold text-white">Shubhendu Halder</h1>
-      </div>
-        
+    <div className="dark:bg-[#0a0a0a] min-h-screen flex flex-col items-center justify-center py-10 bg-[#0a0a0a] ">
+      <div className="container mx-auto p-6 bg-[#111] dark:bg-[#1a1a1a] rounded-xl shadow-xl max-w-6xl">
+        {/* Profile Section */}
+        <div className="flex items-center mb-10">
+          <img
+            src="https://avatars.githubusercontent.com/u/141364632?v=4"
+            alt="Profile"
+            className="w-28 h-28 rounded-full border-4 border-gray-300 dark:border-gray-700 shadow-lg"
+          />
+          <div className="ml-6">
+            <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
+              Shubhendu Halder
+            </h1>
+            <p className="text-xl text-gray-500 dark:text-gray-400 mt-2">
+              LeetCode Enthusiast
+            </p>
+          </div>
+        </div>
 
-        <h1 className="text-2xl font-bold text-center text-gray-700 dark:text-white mb-4">
+        {/* LeetCode Progress Section */}
+        <h1 className="text-3xl font-bold text-center text-gray-700 dark:text-white mb-10">
           LeetCode Progress
         </h1>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div className="bg-blue-100 dark:bg-blue-900 p-4 rounded-lg">
-            <h2 className="text-lg font-semibold text-gray-700 dark:text-white">Total Solved</h2>
-            <p className="text-3xl text-gray-800 dark:text-white">{progress.totalSolved}</p>
-          </div>
-          <div className="bg-green-100 dark:bg-green-900 p-4 rounded-lg">
-            <h2 className="text-lg font-semibold text-gray-700 dark:text-white">Easy Solved</h2>
-            <p className="text-3xl text-gray-800 dark:text-white">{progress.easySolved}</p>
-          </div>
-          <div className="bg-yellow-100 dark:bg-yellow-700 p-4 rounded-lg">
-            <h2 className="text-lg font-semibold text-gray-700 dark:text-white">Medium Solved</h2>
-            <p className="text-3xl text-gray-800 dark:text-white">{progress.mediumSolved}</p>
-          </div>
-          <div className="bg-red-100 dark:bg-red-900 p-4 rounded-lg">
-            <h2 className="text-lg font-semibold text-gray-700 dark:text-white">Hard Solved</h2>
-            <p className="text-3xl text-gray-800 dark:text-white">{progress.hardSolved}</p>
-          </div>
-          <div className="bg-indigo-100 dark:bg-indigo-900 p-4 rounded-lg">
-            <h2 className="text-lg font-semibold text-gray-700 dark:text-white">Acceptance Rate</h2>
-            <p className="text-3xl text-gray-800 dark:text-white">{progress.acceptanceRate}%</p>
-          </div>
-          <div className="bg-purple-100 dark:bg-purple-900 p-4 rounded-lg">
-            <h2 className="text-lg font-semibold text-gray-700 dark:text-white">Rank</h2>
-            <p className="text-3xl text-gray-800 dark:text-white">{progress.ranking}</p>
-          </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/** Total Solved */}
+          <ProgressCard
+            title="Total Solved"
+            value={progress.totalSolved}
+            bgColor="from-blue-400 to-blue-600"
+            icon={<FaCheckCircle />}
+          />
+
+          {/** Easy Solved */}
+          <ProgressCard
+            title="Easy Solved"
+            value={progress.easySolved}
+            bgColor="from-green-400 to-green-600"
+            icon={<FaListAlt />}
+          />
+
+          {/** Medium Solved */}
+          <ProgressCard
+            title="Medium Solved"
+            value={progress.mediumSolved}
+            bgColor="from-yellow-400 to-yellow-600"
+            icon={<FaChartLine />}
+          />
+
+          {/** Hard Solved */}
+          <ProgressCard
+            title="Hard Solved"
+            value={progress.hardSolved}
+            bgColor="from-red-400 to-red-600"
+            icon={<FaTrophy />}
+          />
+
+          {/** Acceptance Rate */}
+          <ProgressCard
+            title="Acceptance Rate"
+            value={`${progress.acceptanceRate}%`}
+            bgColor="from-indigo-400 to-indigo-600"
+            icon={<FaPercent />}
+          />
+
+          {/** Ranking */}
+          <ProgressCard
+            title="Rank"
+            value={progress.ranking}
+            bgColor="from-purple-400 to-purple-600"
+            icon={<FaMedal />}
+          />
         </div>
       </div>
     </div>
   );
 };
+
+// Reusable Progress Card Component with Icons and Hover Effects
+const ProgressCard = ({ title, value, bgColor, icon }) => (
+  <div
+    className={`p-6 rounded-lg shadow-lg bg-gradient-to-r ${bgColor} text-white transform hover:scale-105 transition-transform duration-300 ease-in-out`}
+  >
+    <div className="flex items-center mb-4">
+      <div className="text-2xl">{icon}</div>
+      <h2 className="ml-4 text-lg font-semibold">{title}</h2>
+    </div>
+    <p className="text-3xl font-bold mt-2">{value}</p>
+  </div>
+);
 
 export default LeetCodeProgress;
