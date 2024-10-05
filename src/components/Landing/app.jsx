@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-
+import React, { useState } from "react";
+import image from "../../assets/img.png";
 const Landing = () => {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <div className="h-screen">
+    <div className="h-auto">
       <section className="relative pt-24 overflow-hidden bg-[#0a0a0a] sm:pb-16 lg:pb-20 xl:pb-24">
         <div className="px-4 mx-auto relative sm:px-6 lg:px-8 max-w-7xl">
           <div className="grid items-center grid-cols-1 gap-y-12 lg:grid-cols-2 gap-x-16">
@@ -13,11 +13,16 @@ const Landing = () => {
                 Connecting Devs with Employers
               </h1>
               <p className="mt-4 text-lg font-normal text-gray-400 sm:mt-8">
-                Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
-                Velit officia consequat duis enim velit mollit. Exercitation veniam consequat.
+                Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+                amet sint. Velit officia consequat duis enim velit mollit.
+                Exercitation veniam consequat.
               </p>
 
-              <form action="#" method="POST" className="relative mt-8 rounded-full sm:mt-12">
+              <form
+                action="#"
+                method="POST"
+                className="relative mt-8 rounded-full sm:mt-12"
+              >
                 <div className="relative">
                   <div className="absolute rounded-full -inset-px bg-gradient-to-r from-cyan-500 to-purple-500"></div>
                   <div className="relative">
@@ -57,7 +62,9 @@ const Landing = () => {
               </form>
 
               <div className="mt-8 sm:mt-12">
-                <p className="text-lg font-normal text-white">Trusted by 50k+ users</p>
+                <p className="text-lg font-normal text-white">
+                  Trusted by 50k+ users
+                </p>
 
                 <div className="flex items-center mt-3">
                   <div className="flex space-x-1">
@@ -85,15 +92,25 @@ const Landing = () => {
                             y2="6.90161"
                             gradientUnits="userSpaceOnUse"
                           >
-                            <stop offset="0%" style={{ stopColor: 'var(--color-cyan-500)' }} />
-                            <stop offset="100%" style={{ stopColor: 'var(--color-purple-500)' }} />
+                            <stop
+                              offset="0%"
+                              style={{ stopColor: "var(--color-cyan-500)" }}
+                            />
+                            <stop
+                              offset="100%"
+                              style={{ stopColor: "var(--color-purple-500)" }}
+                            />
                           </linearGradient>
                         </defs>
                       </svg>
                     ))}
                   </div>
-                  <span className="ml-2 text-base font-normal text-white">4.1/5</span>
-                  <span className="ml-1 text-base font-normal text-gray-500">(14k Reviews)</span>
+                  <span className="ml-2 text-base font-normal text-white">
+                    4.1/5
+                  </span>
+                  <span className="ml-1 text-base font-normal text-gray-500">
+                    (14k Reviews)
+                  </span>
                 </div>
               </div>
             </div>
@@ -102,7 +119,7 @@ const Landing = () => {
               <div className="absolute inset-0">
                 <svg
                   className="blur-3xl filter opacity-70"
-                  style={{ filter: 'blur(64px)' }}
+                  style={{ filter: "blur(64px)" }}
                   width="444"
                   height="536"
                   viewBox="0 0 444 536"
@@ -122,8 +139,14 @@ const Landing = () => {
                       y2="118.965"
                       gradientUnits="userSpaceOnUse"
                     >
-                      <stop offset="0%" style={{ stopColor: 'var(--color-cyan-500)' }} />
-                      <stop offset="100%" style={{ stopColor: 'var(--color-purple-500)' }} />
+                      <stop
+                        offset="0%"
+                        style={{ stopColor: "var(--color-cyan-500)" }}
+                      />
+                      <stop
+                        offset="100%"
+                        style={{ stopColor: "var(--color-purple-500)" }}
+                      />
                     </linearGradient>
                   </defs>
                 </svg>
@@ -138,8 +161,8 @@ const Landing = () => {
               </div>
 
               <img
-                className="relative w-full max-w-md mx-auto"
-                src="https://landingfoliocom.imgix.net/store/collection/dusk/images/hero/2/illustration.png"
+                className="relative  max-w-md mx-auto -mt-36 rounded-[50%]" // Adjust the value as needed
+                src={image}
                 alt=""
               />
             </div>
