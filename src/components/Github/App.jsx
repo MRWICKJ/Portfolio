@@ -9,14 +9,11 @@ const App = () => {
     const fetchReposAndProfile = async () => {
       try {
         // Fetch repositories with visibility set to all
-        const repoResponse = await axios.get('https://api.github.com/users/MRWICKJ/repos?visibility=all', {
-          headers: {
-            Authorization: `SHA256 jnZWWBcjtSszBul+ocp0InvJBJ5712Kr1ibMZawlFqk`, // Use your token here
-          },
+        const repoResponse = await axios.get('https://api.github.com/users/anuragjh/repos', {
         });
 
         // Fetch user profile
-        const profileResponse = await axios.get('https://api.github.com/users/MRWICKJ');
+        const profileResponse = await axios.get('https://api.github.com/users/anuragjh');
         
         setRepos(repoResponse.data);
         setProfile(profileResponse.data);

@@ -1,153 +1,104 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
+import { TextHoverEffect } from '../GlowText/ui'
 
 const Team = () => {
-  const [expanded, setExpanded] = useState(false);
+  
+  const people = [
+    {
+      firstname: "Shubhendu",
+      lastname: "Halder",
+      role: "Python Developer",
+      picture: "https://avatars.githubusercontent.com/u/141364632?v=4",
+      description: "Seeking a skilled Python Developer to create scalable web applications. Proficient in Django or Flask and API development. Familiarity with SQL/NoSQL databases and cloud services is desirable.",
+      facebookURL: "#link",
+      linkedinURL: "#link",
+    },
+    {
+      firstname: "Sandip",
+      lastname: "Saha",
+      role: "Java Developer",
+      picture: "https://avatars.githubusercontent.com/u/110690069?v=4",
+      description: "Seeking an experienced Senior Java Developer to design and maintain scalable applications. Must have expertise in Java, Spring, and RESTful APIs. Leadership and mentorship skills are essential.",
+      facebookURL: "#link",
+      linkedinURL: "#link",
+    },
+    {
+      firstname: "Aman",
+      lastname: "Jha",
+      role: "Java Developer",
+      picture: "https://avatars.githubusercontent.com/u/80311301?v=4",
+      description: "Join us as a Java Software Engineer to develop robust applications. Strong Java and web technology skills required. Familiarity with Agile and version control is a plus.",
+      facebookURL: "#link",
+      linkedinURL: "#link",
+    },
+    {
+      firstname: "Sangik",
+      lastname: "Ghosh",
+      role: "Java Developer",
+      picture: "https://avatars.githubusercontent.com/u/136787875?v=4",
+      description: "Looking for a Junior Java Developer eager to learn and grow. Basic Java knowledge required. Work under senior developers and assist in application development.",
+      facebookURL: "#link",
+      linkedinURL: "#link",
+    },
+  ]
+
+  const [member, setMember] = useState(0)
 
   return (
-    <div className="h-screen">
-      <section className="relative pt-24 overflow-hidden bg-[#0a0a0a] sm:pb-16 lg:pb-20 xl:pb-24">
-        <div className="px-4 mx-auto relative sm:px-6 lg:px-8 max-w-7xl">
-          <div className="grid items-center grid-cols-1 gap-y-12 lg:grid-cols-2 gap-x-16">
-            <div>
-              <h1 className="text-4xl font-normal text-white sm:text-5xl lg:text-6xl xl:text-7xl">
-                Connecting Devs with Employers
-              </h1>
-              <p className="mt-4 text-lg font-normal text-gray-400 sm:mt-8">
-                Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
-                Velit officia consequat duis enim velit mollit. Exercitation veniam consequat.
-              </p>
+      <div className="relative mx-auto py-10 w-full max-w-full bg-[#0a0a0a] text-white">
+        <TextHoverEffect text="OUR TEAM" duration={2} id="2" />
 
-              <form action="#" method="POST" className="relative mt-8 rounded-full sm:mt-12">
-                <div className="relative">
-                  <div className="absolute rounded-full -inset-px bg-gradient-to-r from-cyan-500 to-purple-500"></div>
-                  <div className="relative">
-                    <div className="absolute inset-y-0 left-0 flex items-center pl-6">
-                      <svg
-                        className="w-5 h-5 text-gray-500"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={2}
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                        />
-                      </svg>
-                    </div>
-                    <input
-                      type="email"
-                      name=""
-                      id=""
-                      placeholder="Try Java Developer, React Dev etc."
-                      className="block w-full py-4 pr-6 text-white placeholder-gray-500 bg-black border border-transparent rounded-full pl-14 sm:py-5 focus:border-transparent focus:ring-0"
-                    />
-                  </div>
-                </div>
-                <div className="sm:absolute flex sm:right-1.5 sm:inset-y-1.5 mt-4 sm:mt-0">
-                  <button
-                    type="submit"
-                    className="inline-flex items-center justify-center w-full px-5 py-5 text-sm font-semibold tracking-widest text-black uppercase transition-all duration-200 bg-white rounded-full sm:w-auto sm:py-3 hover:opacity-90"
-                  >
-                    Find A Developer
-                  </button>
-                </div>
-              </form>
+      {/* :TITLE CONTAINER */}
 
-              <div className="mt-8 sm:mt-12">
-                <p className="text-lg font-normal text-white">Trusted by 50k+ users</p>
+      <div className="mx-auto px-4 w-full max-w-5xl grid grid-cols-2 gap-y-4 sm:gap-y-10">
 
-                <div className="flex items-center mt-3">
-                  <div className="flex space-x-1">
-                    {/* Repeated SVGs with the same id 'b' are problematic in React.
-                        It's better to define unique ids or refactor the SVGs to avoid duplicate IDs.
-                        Here, I'll refactor the SVGs to use unique IDs by appending an index. */}
-                    {[...Array(4)].map((_, index) => (
-                      <svg
-                        key={index}
-                        className="w-5 h-5"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M10.8586 4.71248C11.2178 3.60691 12.7819 3.60691 13.1412 4.71248L14.4246 8.66264C14.5853 9.15706 15.046 9.49182 15.5659 9.49182H19.7193C20.8818 9.49182 21.3651 10.9794 20.4247 11.6626L17.0645 14.104C16.6439 14.4095 16.4679 14.9512 16.6286 15.4456L17.912 19.3958C18.2713 20.5013 17.0059 21.4207 16.0654 20.7374L12.7052 18.2961C12.2846 17.9905 11.7151 17.9905 11.2945 18.2961L7.93434 20.7374C6.99388 21.4207 5.72851 20.5013 6.08773 19.3958L7.37121 15.4456C7.53186 14.9512 7.35587 14.4095 6.93529 14.104L3.57508 11.6626C2.63463 10.9794 3.11796 9.49182 4.28043 9.49182H8.43387C8.95374 9.49182 9.41448 9.15706 9.57513 8.66264L10.8586 4.71248Z"
-                          fill={`url(#gradient-${index})`}
-                        />
-                        <defs>
-                          <linearGradient
-                            id={`gradient-${index}`}
-                            x1="3.07813"
-                            y1="3.8833"
-                            x2="23.0483"
-                            y2="6.90161"
-                            gradientUnits="userSpaceOnUse"
-                          >
-                            <stop offset="0%" style={{ stopColor: 'var(--color-cyan-500)' }} />
-                            <stop offset="100%" style={{ stopColor: 'var(--color-purple-500)' }} />
-                          </linearGradient>
-                        </defs>
-                      </svg>
-                    ))}
-                  </div>
-                  <span className="ml-2 text-base font-normal text-white">4.1/5</span>
-                  <span className="ml-1 text-base font-normal text-gray-500">(14k Reviews)</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="relative">
-              <div className="absolute inset-0">
-                <svg
-                  className="blur-3xl filter opacity-70"
-                  style={{ filter: 'blur(64px)' }}
-                  width="444"
-                  height="536"
-                  viewBox="0 0 444 536"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M225.919 112.719C343.98 64.6648 389.388 -70.487 437.442 47.574C485.496 165.635 253.266 481.381 135.205 529.435C17.1445 577.488 57.9596 339.654 9.9057 221.593C-38.1482 103.532 107.858 160.773 225.919 112.719Z"
-                    fill="url(#gradient-background)"
-                  />
-                  <defs>
-                    <linearGradient
-                      id="gradient-background"
-                      x1="82.7339"
-                      y1="550.792"
-                      x2="-39.945"
-                      y2="118.965"
-                      gradientUnits="userSpaceOnUse"
-                    >
-                      <stop offset="0%" style={{ stopColor: 'var(--color-cyan-500)' }} />
-                      <stop offset="100%" style={{ stopColor: 'var(--color-purple-500)' }} />
-                    </linearGradient>
-                  </defs>
-                </svg>
-              </div>
-
-              <div className="absolute inset-0">
-                <img
-                  className="object-cover w-full h-full opacity-50"
-                  src="https://Teamfoliocom.imgix.net/store/collection/dusk/images/noise.png"
-                  alt=""
-                />
-              </div>
-
-              <img
-                className="relative w-full max-w-md mx-auto"
-                src="https://Teamfoliocom.imgix.net/store/collection/dusk/images/hero/2/illustration.png"
-                alt=""
-              />
-            </div>
+        {/* :PICTURES CONTAINER */}
+        <div className="col-span-full lg:col-span-1 flex flex-col sm:flex-row justify-center items-center">
+          {/* ::Team members */}
+          <ul className="mb-4 sm:mb-0 px-4 flex sm:flex-col justify-center items-center space-x-3 sm:space-x-0 sm:space-y-3">
+            {people.map((person, index) => (
+              <li key={person.lastname} className={`w-12 h-12 rounded-full overflow-hidden filter ${index !== member ? "saturate-0 hover:brightness-125" : "saturate-100"}`}>
+                <button className="w-full h-full" onClick={() => setMember(index)}>
+                  <img src={person.picture} alt="" className="object-cover" />
+                </button>
+              </li>
+            ))
+            }
+          </ul>
+          {/* ::Picture selected team member */}
+          <div className="rounded overflow-hidden">
+            <img src={people[member].picture} alt="" className="w-full max-w-xs object-cover" />
           </div>
         </div>
-      </section>
-    </div>
-  );
-};
 
-export default Team;
+
+        {/* :DETAILS CONTAINER */}
+        <div className="col-span-full lg:col-span-1 mx-auto lg:mx-0 max-w-lg flex flex-col justify-center space-y-4">
+          {/* ::Role */}
+          <span className="font-bold uppercase tracking-wider">{people[member].role}</span>
+          {/* ::Name */}
+          <h3 className="text-4xl sm:text-5xl font-bold space-y-2">
+            <span className="block">{people[member].firstname}</span>
+            <span className="block">{people[member].lastname}</span>
+          </h3>
+          {/* ::Description */}
+          <p className="py-2 text-base">{people[member].description}</p>
+          {/* ::Socials */}
+          <div className="mb-4 inline-flex space-x-4">
+            {/* Facebook */}
+            <a href={people[member].facebookURL} className="text-gray-600 hover:text-blue-600">
+              <svg className="w-6 h-6" fill="currentColor" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24"><path d="M16.403,9H14V7c0-1.032,0.084-1.682,1.563-1.682h0.868c0.552,0,1-0.448,1-1V3.064c0-0.523-0.401-0.97-0.923-1.005C15.904,2.018,15.299,1.999,14.693,2C11.98,2,10,3.657,10,6.699V9H8c-0.552,0-1,0.448-1,1v2c0,0.552,0.448,1,1,1l2-0.001V21c0,0.552,0.448,1,1,1h2c0.552,0,1-0.448,1-1v-8.003l2.174-0.001c0.508,0,0.935-0.381,0.993-0.886l0.229-1.996C17.465,9.521,17.001,9,16.403,9z"/></svg>
+            </a>
+            {/* Linkedin */}
+            <a href={people[member].linkedinURL} className="text-gray-600 hover:text-blue-600">
+              <svg className="w-6 h-6" fill="currentColor" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 30 30"><path d="M9,25H4V10h5V25z M6.501,8C5.118,8,4,6.879,4,5.499S5.12,3,6.501,3C7.879,3,9,4.121,9,5.499C9,6.879,7.879,8,6.501,8z M27,25h-4.807v-7.3c0-1.741-0.033-3.98-2.499-3.98c-2.503,0-2.888,1.896-2.888,3.854V25H12V9.989h4.614v2.051h0.065 c0.642-1.18,2.211-2.424,4.551-2.424c4.87,0,5.77,3.109,5.77,7.151C27,16.767,27,25,27,25z"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  )
+}
+
+export default Team

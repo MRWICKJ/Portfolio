@@ -6,7 +6,7 @@ const LeetCodeProgress = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('https://leetcode-stats-api.herokuapp.com/haldershubhendu2')
+    fetch('https://leetcode-stats-api.herokuapp.com/aman_starts')
       .then((response) => response.json())
       .then((data) => {
         setProgress(data);
@@ -31,7 +31,7 @@ const LeetCodeProgress = () => {
           alt="Profile"
           className="w-20 h-20 rounded-full mr-4 border-4 border-gray-300 dark:border-gray-700"
         />
-        <h1 className="text-4xl font-bold text-white">Shubhendu Halder</h1>
+        <h1 className="text-4xl font-bold text-white">Aman Jha</h1>
       </div>
         
 
