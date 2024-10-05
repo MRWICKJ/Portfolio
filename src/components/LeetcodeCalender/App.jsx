@@ -23,7 +23,7 @@ export default function LeetcodeCal() {
             <h1 className='text-2xl p-4 hidden lg:block'>Day I <span className='text-blue-700 font-semibold'>LeetCode</span></h1>
             <div className='bg-[#0a0a0a] text-white hidden justify-center text-center lg:flex'>
                 <LeetCodeCalendar
-                    username='haldershubhendu2' // Replace with your LeetCode username
+                    username='aman_starts' // Replace with your LeetCode username
                     blockSize={15} // Default block size
                     blockMargin={5} // Default block margin
                     fontSize={16} // Default font size
