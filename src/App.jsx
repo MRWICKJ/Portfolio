@@ -26,9 +26,6 @@ function App() {
             <Landing/>
         </div>
 
-      {/* <div id='projects'>
-        <Laptop />
-      </div> */}
       <div id='projects' className='bg-[#0a0a0a]'>
         <BentoGridDemo />
       </div>
