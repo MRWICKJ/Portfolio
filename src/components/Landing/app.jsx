@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import image from "../../assets/img.png";
+
 const Landing = () => {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <div className="h-auto">
-      <section className="relative pt-24 overflow-hidden bg-[#0a0a0a] sm:pb-16 lg:pb-20 xl:pb-24">
-        <div className="px-4 mx-auto relative sm:px-6 lg:px-8 max-w-7xl">
+    <div className="h-screen bg-gradient-to-b from-[#0a0a0a] to-[#121212] flex items-center justify-center">
+      <section className="relative w-full h-full overflow-hidden">
+        <div className="px-4 mx-auto relative sm:px-6 lg:px-8 max-w-7xl h-full flex items-center">
           <div className="grid items-center grid-cols-1 gap-y-12 lg:grid-cols-2 gap-x-16">
             <div>
-              <h1 className="text-4xl font-normal text-white sm:text-5xl lg:text-6xl xl:text-7xl">
+              <h1 className="text-4xl font-semibold text-white sm:text-5xl lg:text-6xl xl:text-7xl">
                 Connecting Devs with Employers
               </h1>
               <p className="mt-4 text-lg font-normal text-gray-400 sm:mt-8">
@@ -44,8 +45,6 @@ const Landing = () => {
                     </div>
                     <input
                       type="email"
-                      name=""
-                      id=""
                       placeholder="Try Java Developer, React Dev etc."
                       className="block w-full py-4 pr-6 text-white placeholder-gray-500 bg-black border border-transparent rounded-full pl-14 sm:py-5 focus:border-transparent focus:ring-0"
                     />
@@ -54,7 +53,7 @@ const Landing = () => {
                 <div className="sm:absolute flex sm:right-1.5 sm:inset-y-1.5 mt-4 sm:mt-0">
                   <button
                     type="submit"
-                    className="inline-flex items-center justify-center w-full px-5 py-5 text-sm font-semibold tracking-widest text-black uppercase transition-all duration-200 bg-white rounded-full sm:w-auto sm:py-3 hover:opacity-90"
+                    className="inline-flex items-center justify-center w-full px-5 py-5 text-sm font-semibold tracking-widest text-black uppercase transition-all duration-200 bg-white rounded-full sm:w-auto sm:py-3 hover:bg-gray-200"
                   >
                     Find A Developer
                   </button>
@@ -68,9 +67,6 @@ const Landing = () => {
 
                 <div className="flex items-center mt-3">
                   <div className="flex space-x-1">
-                    {/* Repeated SVGs with the same id 'b' are problematic in React.
-                        It's better to define unique ids or refactor the SVGs to avoid duplicate IDs.
-                        Here, I'll refactor the SVGs to use unique IDs by appending an index. */}
                     {[...Array(4)].map((_, index) => (
                       <svg
                         key={index}
@@ -154,16 +150,16 @@ const Landing = () => {
 
               <div className="absolute inset-0">
                 <img
-                  className="object-cover w-full h-full opacity-50"
+                  className="object-cover w-full h-full opacity-30"
                   src="https://landingfoliocom.imgix.net/store/collection/dusk/images/noise.png"
                   alt=""
                 />
               </div>
 
               <img
-                className="relative  max-w-md mx-auto -mt-36 rounded-[50%]" // Adjust the value as needed
+                className="relative max-w-md mx-auto -mt-24 rounded-full shadow-lg border-4 border-white"
                 src={image}
-                alt=""
+                alt="Developer"
               />
             </div>
           </div>

@@ -11,18 +11,27 @@ export const TextHoverEffect = ({
     stop4: "var(--cyan-500)",
     stop5: "var(--violet-500)",
   },
-  id // New prop for unique ID
+  id, // New prop for unique ID
 }) => {
   const svgRef = useRef(null);
   const [cursor, setCursor] = useState({ x: 0, y: 0 });
   const [hovered, setHovered] = useState(false);
   const [maskPosition, setMaskPosition] = useState({ cx: "50%", cy: "50%" });
 
+  // Debounced cursor position update
+  const handleMouseMove = (e) => {
+    const svgRect = svgRef.current.getBoundingClientRect();
+    setCursor({
+      x: e.clientX - svgRect.left,
+      y: e.clientY - svgRect.top,
+    });
+  };
+
   useEffect(() => {
-    if (svgRef.current && cursor.x !== null && cursor.y !== null) {
+    if (svgRef.current) {
       const svgRect = svgRef.current.getBoundingClientRect();
-      const cxPercentage = ((cursor.x - svgRect.left) / svgRect.width) * 100;
-      const cyPercentage = ((cursor.y - svgRect.top) / svgRect.height) * 100;
+      const cxPercentage = ((cursor.x) / svgRect.width) * 100;
+      const cyPercentage = ((cursor.y) / svgRect.height) * 100;
       setMaskPosition({
         cx: `${cxPercentage}%`,
         cy: `${cyPercentage}%`,
@@ -39,8 +48,10 @@ export const TextHoverEffect = ({
       xmlns="http://www.w3.org/2000/svg"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      onMouseMove={(e) => setCursor({ x: e.clientX, y: e.clientY })}
+      onMouseMove={handleMouseMove}
       className="select-none"
+      role="img"
+      aria-label={text}
     >
       <defs>
         <linearGradient
@@ -103,7 +114,7 @@ export const TextHoverEffect = ({
           strokeDasharray: 1000,
         }}
         transition={{
-          duration: 4,
+          duration: duration, // Use duration prop
           ease: "easeInOut",
         }}
       >

@@ -9,33 +9,32 @@ import {
   IconSignature,
   IconTableColumn,
 } from "@tabler/icons-react";
-import { div } from "framer-motion/client";
-// import { TextHoverEffectDemo } from "../GlowText/App";
 import { TextHoverEffect } from "../GlowText/ui";
 
 export function BentoGridDemo() {
   return (
-    <div>
-        <TextHoverEffect text="PROJECTS" duration={2} id="1" />
-        <BentoGrid className="max-w-7xl p-10">
-      {items.map((item, i) => (
-        <BentoGridItem
-          key={i}
-          title={item.title}
-          description={item.description}
-          header={item.header}
-          icon={item.icon}
-          className={i === 3 || i === 6 ? "md:col-span-2" : ""}
-        />
-      ))}
-    </BentoGrid>
+    <div className="py-10">
+      <TextHoverEffect text="PROJECTS" duration={2} id="1" />
+      <BentoGrid className="max-w-7xl mx-auto px-4">
+        {items.map((item, i) => (
+          <BentoGridItem
+            key={i}
+            title={item.title}
+            description={item.description}
+            header={item.header}
+            icon={item.icon}
+            className={i === 3 || i === 6 ? "md:col-span-2" : ""}
+          />
+        ))}
+      </BentoGrid>
     </div>
-    
   );
 }
+
 const Skeleton = () => (
-  <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100"></div>
+  <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100 animate-pulse"></div>
 );
+
 const items = [
   {
     title: "The Dawn of Innovation",
