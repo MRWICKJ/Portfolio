@@ -75,7 +75,7 @@ function Navbar({ className }) {
               onClick={() => setIsDrawerOpen(false)}
             >
               <TfiAnnouncement className="inline-block mr-2 mb-2" />
-              Announcements
+              Achievements
             </Link>
             <Link
               to="journey"
