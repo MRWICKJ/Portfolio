@@ -180,7 +180,7 @@ export function TimelineDemo() {
   ];
   return (
     (<div className="w-full bg-[#0a0a0a]">
-      <TextHoverEffect text="JOURNEY" id="time" size={5}/>
+      <TextHoverEffect text="JOURNEY" id="time"/>
       <Timeline data={data} />
     </div>)
   );
