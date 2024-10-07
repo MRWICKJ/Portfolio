@@ -68,7 +68,7 @@ function Navbar({ className }) {
               Projects
             </Link>
             <Link
-              to="announcements"
+              to="achievements"
               smooth={true}
               duration={1000}
               className="text-white transition-colors duration-300"
@@ -144,7 +144,7 @@ function Navbar({ className }) {
             Projects
           </Link>
           <Link
-            to="announcements"
+            to="achievements"
             smooth={true}
             duration={1000}
             className="text-white transition-colors duration-300"
@@ -162,9 +162,10 @@ function Navbar({ className }) {
             Journey
           </Link>
           <a
-            href="#contact"
+            href="https://api.whatsapp.com/send?phone=91731902281"
             className="bg-[#999] text-[#111] hover:bg-stone-600 hover:text-white px-3 py-1 rounded-full"
           >
+            
             <PiContactlessPaymentFill className="inline-block mr-2 mb-1"/>
             Let's Connect
           </a>
