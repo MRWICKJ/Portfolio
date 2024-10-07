@@ -75,7 +75,7 @@ function Navbar({ className }) {
               onClick={() => setIsDrawerOpen(false)}
             >
               <TfiAnnouncement className="inline-block mr-2 mb-2" />
-              Announcements
+              Achievments
             </Link>
             <Link
               to="journey"
@@ -88,36 +88,15 @@ function Navbar({ className }) {
               Journey
             </Link>
             <a
-              href="/login"
-              className="text-white hover:text-blue-500"
-              onClick={() => setIsDrawerOpen(false)}
-            >
-              <FaUser className="inline-block mr-2 mb-2" />
-              Login
-            </a>
-            <a
-              href="/dashboard"
-              className="text-white hover:text-blue-500"
-              onClick={() => setIsDrawerOpen(false)}
-            >
-              <MdDashboard className="inline-block mr-2 mb-2" />
-              Dashboard
-            </a>
-            <a
-              href="/settings"
-              className="text-white hover:text-blue-500"
-              onClick={() => setIsDrawerOpen(false)}
-            >
-              <IoSettings className="inline-block mr-2 mb-2" />
-              Settings
-            </a>
-            <a
-              href="/apply"
-              className="bg-blue-500 text-white hover:bg-blue-600 px-2 py-1 rounded-md"
-              onClick={() => setIsDrawerOpen(false)}
-            >
-              Register
-            </a>
+            href="https://api.whatsapp.com/send?phone=91731902281"
+            className="bg-[#999] text-[#111] hover:bg-stone-600 hover:text-white px-3 py-1 rounded-full"
+          >
+            
+            <PiContactlessPaymentFill className="inline-block mr-2 mb-1"/>
+            Let's Connect
+          </a>
+          
+            
           </div>
         </div>
       </div>
