@@ -87,32 +87,9 @@ function Navbar({ className }) {
               <GiJourney className="inline-block mr-2 mb-2" />
               Journey
             </Link>
+            
             <a
-              href="/login"
-              className="text-white hover:text-blue-500"
-              onClick={() => setIsDrawerOpen(false)}
-            >
-              <FaUser className="inline-block mr-2 mb-2" />
-              Login
-            </a>
-            <a
-              href="/dashboard"
-              className="text-white hover:text-blue-500"
-              onClick={() => setIsDrawerOpen(false)}
-            >
-              <MdDashboard className="inline-block mr-2 mb-2" />
-              Dashboard
-            </a>
-            <a
-              href="/settings"
-              className="text-white hover:text-blue-500"
-              onClick={() => setIsDrawerOpen(false)}
-            >
-              <IoSettings className="inline-block mr-2 mb-2" />
-              Settings
-            </a>
-            <a
-              href="/apply"
+              href="https://api.whatsapp.com/send?phone=917501534511"
               className="bg-blue-500 text-white hover:bg-blue-600 px-2 py-1 rounded-md"
               onClick={() => setIsDrawerOpen(false)}
             >
@@ -123,7 +100,7 @@ function Navbar({ className }) {
       </div>
 
       {/* Full Navbar for larger screens */}
-      <div className="hidden lg:flex items-center space-x-6 bg-[#0a0a0a] p-2 ">
+      <div className="hidden lg:flex items-center space-x-6 bg-transparent p-2 ">
         <Menu>
           <Link
             to="home"
@@ -162,9 +139,10 @@ function Navbar({ className }) {
             Journey
           </Link>
           <a
-            href="#contact"
+            href="https://api.whatsapp.com/send?phone=917501534511"
             className="bg-[#999] text-[#111] hover:bg-stone-600 hover:text-white px-3 py-1 rounded-full"
           >
+            
             <PiContactlessPaymentFill className="inline-block mr-2 mb-1"/>
             Let's Connect
           </a>

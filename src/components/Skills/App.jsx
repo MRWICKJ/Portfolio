@@ -101,7 +101,7 @@ const pieChartData = {
 const SkillsSection = () => {
   return (
     <div className="bg-[#0a0a0a] text-zinc-400 p-6 shadow-lg">
-    <TextHoverEffect text="SKILLS" id="skill" size={5}/>
+    <TextHoverEffect text="SKILLS" id="skill"/>
       <div className="flex flex-col md:flex-row gap-7">
         {/* First Column for Progress Bars */}
         <div className="w-full md:w-1/4 mb-4 md:mb-0">
