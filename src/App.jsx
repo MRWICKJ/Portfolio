@@ -4,7 +4,7 @@ import Logo from './assets/react.svg'
 
 import { TimelineDemo } from './components/Timeline/app'
 import { NavbarDemo } from './components/NavBar/FixedNav'
-import Landing from './Components/Landing/app.jsx'
+import Landing from './Components/Landing/app'
 import Footer from './components/Footer/App'
 import { Link } from 'react-scroll' // Import from react-scroll
 import { BentoGridDemo } from './components/Projects/App.jsx'
