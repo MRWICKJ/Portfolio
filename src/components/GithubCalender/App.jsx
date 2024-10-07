@@ -12,7 +12,7 @@ function GithubCal() {
       {/* Calendar Wrapper */}
       <div className="p-6 bg-[#111] rounded-2xl shadow-lg transform transition-all duration-300 hover:translate-y-2 hover:shadow-2xl hover:scale-105">
         <GitHubCalendar
-          username="MRWICKJ"
+          username="anuragjh"
           blockSize={17}
           blockMargin={6}
           color="#c084f5"
