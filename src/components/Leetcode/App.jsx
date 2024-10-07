@@ -5,16 +5,19 @@ import {
   FaTrophy,
   FaCheckCircle,
   FaListAlt,
-  FaPercent,
+  // FaPercent, 
 } from "react-icons/fa";
+import { RiCopperCoinFill } from "react-icons/ri";
+import PropTypes from "prop-types";
 
 const LeetCodeProgress = () => {
   const [progress, setProgress] = useState(null);
+  const [badgesData, setBadgesData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("https://leetcode-stats-api.herokuapp.com/haldershubhendu2")
+    fetch("https://leetcode-api-faisalshohag.vercel.app/haldershubhendu2")
       .then((response) => response.json())
       .then((data) => {
         setProgress(data);
@@ -24,11 +27,20 @@ const LeetCodeProgress = () => {
         setError("Failed to fetch data");
         setLoading(false);
       });
+
+    fetch("https://alfa-leetcode-api.onrender.com/haldershubhendu2/badges")
+      .then((response) => response.json())
+      .then((data) => {
+        setBadgesData(data);
+      })
+      .catch((error) => {
+        console.error("Failed to fetch badges:", error);
+      });
   }, []);
 
-  if (loading)
-    return <div className="text-center text-blue-500">Loading...</div>;
+  if (loading) return <div className="text-center text-blue-500">Loading...</div>;
   if (error) return <div className="text-center text-red-500">{error}</div>;
+  if (!progress) return <div>No data available.</div>;
 
   return (
     <div className="dark:bg-[#0a0a0a] min-h-screen flex flex-col items-center justify-center py-10 bg-[#0a0a0a] ">
@@ -56,7 +68,6 @@ const LeetCodeProgress = () => {
         </h1>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/** Total Solved */}
           <ProgressCard
             title="Total Solved"
             value={progress.totalSolved}
@@ -64,7 +75,6 @@ const LeetCodeProgress = () => {
             icon={<FaCheckCircle />}
           />
 
-          {/** Easy Solved */}
           <ProgressCard
             title="Easy Solved"
             value={progress.easySolved}
@@ -72,7 +82,6 @@ const LeetCodeProgress = () => {
             icon={<FaListAlt />}
           />
 
-          {/** Medium Solved */}
           <ProgressCard
             title="Medium Solved"
             value={progress.mediumSolved}
@@ -80,7 +89,6 @@ const LeetCodeProgress = () => {
             icon={<FaChartLine />}
           />
 
-          {/** Hard Solved */}
           <ProgressCard
             title="Hard Solved"
             value={progress.hardSolved}
@@ -88,15 +96,13 @@ const LeetCodeProgress = () => {
             icon={<FaTrophy />}
           />
 
-          {/** Acceptance Rate */}
           <ProgressCard
-            title="Acceptance Rate"
-            value={`${progress.acceptanceRate}%`}
+            title="Contribution Point"
+            value={`${progress.contributionPoint}`}
             bgColor="from-indigo-400 to-indigo-600"
-            icon={<FaPercent />}
+            icon={<RiCopperCoinFill />}
           />
 
-          {/** Ranking */}
           <ProgressCard
             title="Rank"
             value={progress.ranking}
@@ -104,12 +110,32 @@ const LeetCodeProgress = () => {
             icon={<FaMedal />}
           />
         </div>
+
+        {/* Badge Showcase Section */}
+        {badgesData && (
+          <div>
+            <h1 className="text-3xl font-bold text-center text-gray-700 dark:text-white my-10">
+              Badges
+            </h1>
+
+            {/* Earned Badges */}
+            <div>
+              <h2 className="text-2xl font-bold text-gray-700 dark:text-white mb-4">
+                Earned Badges
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                {badgesData.badges.map((badge, index) => (
+                  <BadgeCard key={index} badge={badge} />
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
 };
 
-// Reusable Progress Card Component with Icons and Hover Effects
 const ProgressCard = ({ title, value, bgColor, icon }) => (
   <div
     className={`p-6 rounded-lg shadow-lg bg-gradient-to-r ${bgColor} text-white transform hover:scale-105 transition-transform duration-300 ease-in-out`}
@@ -121,5 +147,35 @@ const ProgressCard = ({ title, value, bgColor, icon }) => (
     <p className="text-3xl font-bold mt-2">{value}</p>
   </div>
 );
+
+const BadgeCard = ({ badge }) => (
+  <div className="p-6 rounded-lg shadow-lg bg-[#111] dark:bg-[#1a1a1a] text-white text-center">
+    <img
+      src={badge.icon.startsWith("http") ? badge.icon : `https://leetcode.com${badge.icon}`}
+      alt={badge.displayName || badge.name}
+      className="w-24 h-24 mx-auto mb-4"
+    />
+    <h2 className="text-lg font-semibold">{badge.displayName || badge.name}</h2>
+    {badge.creationDate && (
+      <p className="text-gray-400 text-sm mt-1">Earned on {new Date(badge.creationDate).toLocaleDateString()}</p>
+    )}
+  </div>
+);
+
+ProgressCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  bgColor: PropTypes.string.isRequired,
+  icon: PropTypes.element.isRequired,
+};
+
+BadgeCard.propTypes = {
+  badge: PropTypes.shape({
+    icon: PropTypes.string.isRequired,
+    displayName: PropTypes.string,
+    name: PropTypes.string,
+    creationDate: PropTypes.string,
+  }).isRequired,
+};
 
 export default LeetCodeProgress;

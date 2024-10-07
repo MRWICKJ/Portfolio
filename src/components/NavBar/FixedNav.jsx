@@ -68,7 +68,7 @@ function Navbar({ className }) {
               Projects
             </Link>
             <Link
-              to="announcements"
+              to="achievements"
               smooth={true}
               duration={1000}
               className="text-white transition-colors duration-300"
@@ -144,7 +144,7 @@ function Navbar({ className }) {
             Projects
           </Link>
           <Link
-            to="announcements"
+            to="achievements"
             smooth={true}
             duration={1000}
             className="text-white transition-colors duration-300"

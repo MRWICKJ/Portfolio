@@ -16,7 +16,7 @@ import { TextHoverEffect } from "../GlowText/ui";
 export function BentoGridDemo() {
   return (
     <div>
-        <TextHoverEffect text="PROJECTS" duration={2} id="1" />
+        <TextHoverEffect text="PROJECTS" id="projects" size={5}/>
         <BentoGrid className="max-w-7xl p-10">
       {items.map((item, i) => (
         <BentoGridItem
@@ -33,20 +33,23 @@ export function BentoGridDemo() {
     
   );
 }
-const Skeleton = () => (
-  <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100"></div>
+const Skeleton = ({ image }) => (
+  <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100">
+    <img src={image} alt="project" className="object-cover w-full h-full rounded-xl" />
+  </div>
 );
+
 const items = [
   {
-    title: "The Dawn of Innovation",
-    description: "Explore the birth of groundbreaking ideas and inventions.",
-    header: <Skeleton />,
+    title: "DISCORD",
+    description: "Community-driven platform for sharing ideas, projects, and collaboration.",
+    header: <Skeleton image="https://techcrunch.com/wp-content/uploads/2021/05/Discord_IAP_KeyVisuals_Header_02.jpeg"/>,
     icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: "The Digital Revolution",
-    description: "Dive into the transformative power of technology.",
-    header: <Skeleton />,
+    title: "TECHHUB",
+    description: "TechHub Club: Interactive platform for tech enthusiasts, built with React.",
+    header: <Skeleton image=""/>,
     icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
   },
   {

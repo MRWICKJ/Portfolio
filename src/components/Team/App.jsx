@@ -46,7 +46,7 @@ const Team = () => {
 
   return (
       <div className="relative mx-auto py-10 w-full max-w-full bg-[#0a0a0a] text-white">
-        <TextHoverEffect text="OUR TEAM" duration={2} id="2" />
+        <TextHoverEffect text="OUR TEAM" id="team" size={5}/>
 
       {/* :TITLE CONTAINER */}
 

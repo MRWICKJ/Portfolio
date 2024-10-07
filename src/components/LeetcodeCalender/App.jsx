@@ -3,19 +3,20 @@ import LeetCodeCalendar from 'leetcode-calendar';
 export default function LeetcodeCal() {
     const exampleTheme = {
         light: [
-            'rgb(235, 235, 235)',
-            'rgba(192, 132, 245, 0.44)',
-            'rgba(192, 132, 245, 0.6)',
-            'rgba(192, 132, 245, 0.76)',
-            'rgba(192, 132, 245, 0.92)',
+            'rgb(57, 57, 57)', // Base gray
+            'rgb(14, 68, 41)', // Light green with low opacity
+            'rgb(0, 108, 50)',  // Light green with medium low opacity
+            'rgb(38, 166, 65)', // Light green with medium high opacity
+            'rgb(57, 211, 83)', // Light green with high opacity
           ],
           dark: [
-            'rgb(235, 235, 235)',
-            'rgba(192, 132, 245, 0.44)',
-            'rgba(192, 132, 245, 0.6)',
-            'rgba(192, 132, 245, 0.76)',
-            'rgba(192, 132, 245, 0.92)',
+            'rgb(57, 57, 57)', // Base gray
+            'rgb(14, 68, 41)', // Light green with low opacity
+            'rgb(0, 108, 50)',  // Light green with medium low opacity
+            'rgb(38, 166, 65)', // Light green with medium high opacity
+            'rgb(57, 211, 83)', // Light green with high opacity
           ],
+          
     };
 
     return (
