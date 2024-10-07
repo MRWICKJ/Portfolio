@@ -88,7 +88,7 @@ function Navbar({ className }) {
               Journey
             </Link>
             <a
-            href="https://api.whatsapp.com/send?phone=91731902281"
+            href="https://api.whatsapp.com/send?phone=917319022811"
             className="bg-[#999] text-[#111] hover:bg-stone-600 hover:text-white px-3 py-1 rounded-full"
           >
             
@@ -141,7 +141,7 @@ function Navbar({ className }) {
             Journey
           </Link>
           <a
-            href="https://api.whatsapp.com/send?phone=91731902281"
+            href="https://api.whatsapp.com/send?phone=917319022811"
             className="bg-[#999] text-[#111] hover:bg-stone-600 hover:text-white px-3 py-1 rounded-full"
           >
             
