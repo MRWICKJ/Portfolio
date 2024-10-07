@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import './App.css'
 import Logo from './assets/react.svg'
-import Laptop from './3d_Components/Laptop/App'
 import { TimelineDemo } from './components/Timeline/app'
 import { NavbarDemo } from './components/NavBar/FixedNav'
 import Landing from './components/Landing/app'
