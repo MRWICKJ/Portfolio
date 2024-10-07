@@ -17,7 +17,7 @@ const Team = () => {
       firstname: "Sandip",
       lastname: "Saha",
       role: "Java Developer",
-      picture: "https://media.licdn.com/dms/image/v2/D5603AQEFc8dTpQijew/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1726243938897?e=1733356800&v=beta&t=A77cGQRpnHolX2VEcW9EF1ivozRlD0IR7rKx_FCAkoQ",
+      picture: "https://avatars.githubusercontent.com/u/110690069?v=4",
       description: "Seeking an experienced Senior Java Developer to design and maintain scalable applications. Must have expertise in Java, Spring, and RESTful APIs. Leadership and mentorship skills are essential.",
       facebookURL: "#link",
       linkedinURL: "#link",
