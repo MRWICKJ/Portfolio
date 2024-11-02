@@ -16,7 +16,7 @@ const LeetCodeProgress = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("https://leetcode-api-faisalshohag.vercel.app/aman_starts")
+    fetch("https://leetcode-api-faisalshohag.vercel.app/aman_jha_dev")
       .then((response) => response.json())
       .then((data) => {
         setProgress(data);
@@ -27,7 +27,7 @@ const LeetCodeProgress = () => {
         setLoading(false);
       });
 
-    fetch("https://alfa-leetcode-api.onrender.com/aman_starts/badges")
+    fetch("https://alfa-leetcode-api.onrender.com/aman_jha_dev/badges")
       .then((response) => response.json())
       .then((data) => {
         setBadgesData(data);
