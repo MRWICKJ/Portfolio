@@ -152,8 +152,7 @@ export function TimelineDemo() {
     content: (
       <div>
         <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-          In 2022, I completed my high school education, where I developed a keen interest in computers and programming,Tranfered to Kolkata from Delhi in 2016 .Born in 2007.
-        </p>
+          I was born in 2004 in West Bengal and studied in a Bengali medium school. I completed my high school education in 2022, where I developed a keen interest in computers and programming.
         <div className="grid grid-cols-2 gap-4">
             <img
               src={image10}
