@@ -8,7 +8,6 @@ import image2 from "../../assets/problemSolve.png";
 import image3 from "../../assets/hackathon_grp1.jpg";
 import image4 from "../../assets/hackathon_grp2.jpg";
 import image5 from "../../assets/hackathon_grp3.jpg";
-import image5a from "../../assets/hackathon_grp4.jpg";
 import image6 from "../../assets/hack_cert.jpg";
 import image7 from "../../assets/surtel1.png";
 import image8 from "../../assets/collage1.png";
@@ -21,6 +20,7 @@ export function TimelineDemo() {
     {
       title: "Current",
       content: (
+        <>
         <div>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
             Currently, I am working on various skills and projects, focusing on Data Structures and Algorithms (DSA), backend development, Spring Boot, Android development, and solving problems on LeetCode. I am also pursuing certifications to enhance my knowledge and credibility in the tech field.
@@ -49,11 +49,13 @@ export function TimelineDemo() {
             />
           </div>
         </div>
+        </>
       ),
     },
     {
       title: "2024",
       content: (
+        <>
         <div>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
             In September 2024, I participated in the Sheriyans Coding School Hackathon as a finalist with my team , successfully passing rounds 1, 2, and 3 against fierce competition from all over India.
@@ -89,12 +91,14 @@ export function TimelineDemo() {
             />
           </div>
         </div>
+        </>
       ),
     },
     
     {
       title: "Mid 2023",
       content: (
+        <>
         <div>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
             In 2023, I completed an internship at Surtle Security, where I focused on backend development using Java. This experience allowed me to deepen my understanding of server-side programming and strengthen my coding skills.
@@ -114,18 +118,20 @@ export function TimelineDemo() {
            
           </div>
         </div>
+        </>
       ),
     },
     
     {
       title: "Started College",
       content: (
+        <>
         <div>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
             In  Fall 2022, I began my academic journey at Behal Government Polytechnic in Computer Science and Technology. This marked a significant milestone in my pursuit of knowledge and skills in the tech industry.
           </p>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-            As I navigate through my studies, I'm excited to explore various domains, engage with innovative projects, and collaborate with fellow students.
+            As I navigate through my studies, I&apos;m excited to explore various domains, engage with innovative projects, and collaborate with fellow students.
           </p>
           <div className="grid grid-cols-2 gap-4">
             <img
@@ -144,12 +150,14 @@ export function TimelineDemo() {
             />
           </div>
         </div>
+        </>
       ),
     },
 
     {
     title: "Early Life",
     content: (
+      <>
       <div>
         <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
           I was born in 2004 in West Bengal and studied in a Bengali medium school. I completed my high school education in 2022, where I developed a keen interest in computers and programming.
@@ -172,6 +180,7 @@ export function TimelineDemo() {
             />
           </div>
       </div>
+      </>
     ),
   }
 
